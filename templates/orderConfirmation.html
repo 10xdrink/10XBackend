@@ -1,0 +1,193 @@
+<!-- templates/orderConfirmation.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order Confirmation</title>
+  <!-- Import Poppins Font from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset some default styles */
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .logo{
+        margin-bottom: 20px;
+        background: #061aab; 
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    /* Base styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f6f8;
+      padding: 20px;
+      color: #333333;
+    }
+
+    .container {
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 12px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      text-align: start;
+    }
+
+    .logo img {
+      width: 150px;
+      height: auto;
+    }
+
+    h2 {
+      color: #000000; /* Brand Color */
+      margin-bottom: 20px;
+      font-weight: 700;
+      font-size: 24px;
+    }
+
+    p {
+      color: #000000;
+      font-weight: 300;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    a{
+        color: #061aab;
+        text-decoration: none;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 28px;
+      background: #061aab; /* Solid Brand Color */
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      transition: background 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .button:hover {
+      background: #0041c4;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .order-summary {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    .order-summary th, .order-summary td {
+      border: 1px solid #e0e0e0;
+      padding: 10px;
+      text-align: left;
+    }
+
+    .order-summary th {
+      background-color: #f9f9f9;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #000000;
+      border-top: 1px solid #e0e0e0;
+      padding-top: 20px;
+    }
+
+    .footer p {
+      margin: 0;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+
+      .button {
+        width: 100%;
+        padding: 12px 0;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+
+      .order-summary th, .order-summary td {
+        padding: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Logo Section -->
+    <div class="logo">
+      <img src="https://res.cloudinary.com/dvbbsgj1u/image/upload/v1731090126/tesnhlpvlo6w9bdjepag.png" alt="Your Company Logo">
+    </div>
+  
+    <h2>Order Confirmation</h2>
+    <p>Hi {{name}},</p>
+    <p>Thank you for your purchase! We're excited to let you know that we've received your order and it's now being processed. Below are your order details:</p>
+
+    <table class="order-summary">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Title</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Subtotal</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each items}}
+        <tr>
+          <td><img src="{{this.image}}" alt="{{this.title}}" width="50" height="50"></td>
+          <td>{{this.title}}</td>
+          <td>{{this.quantity}}</td>
+          <td>${{this.price.toFixed(2)}}</td>
+          <td>${{(this.price * this.quantity).toFixed(2)}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+
+    <p><strong>Subtotal:</strong> ${{subtotal.toFixed(2)}}</p>
+    {{#if discount}}
+    <p><strong>Discount:</strong> -${{discount.toFixed(2)}}</p>
+    {{/if}}
+    <p><strong>Total Amount:</strong> ${{totalAmount.toFixed(2)}}</p>
+
+    <p>Your order status is currently: <strong>{{status}}</strong>.</p>
+
+    <p>If you have any questions or need further assistance, feel free to <a href="{{supportUrl}}">contact our support team</a>.</p>
+
+    <p>Thank you for choosing us!</p>
+    
+    <div class="footer">
+      <p>Best regards, <br/>10X Formulas</p>
+      <p><a href="http://localhost:5173/contact">Contact Support</a></p>
+    </div>
+  </div>
+  
+</body>
+</html>

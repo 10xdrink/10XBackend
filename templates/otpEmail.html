@@ -1,0 +1,176 @@
+<!-- templates/otpEmail.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Login OTP</title>
+  <!-- Import Poppins Font from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset some default styles */
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Logo Section */
+    .logo {
+      margin-bottom: 20px;
+      background: #061aab; 
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    /* Base styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f6f8;
+      padding: 20px;
+      color: #333333;
+    }
+
+    .container {
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 12px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      text-align: start;
+    }
+
+    /* Logo Image */
+    .logo img {
+      width: 150px;
+      height: auto;
+    }
+
+    /* Header */
+    h2 {
+      color: #000000; /* Brand Color */
+      margin-bottom: 20px;
+      font-weight: 700;
+      font-size: 24px;
+    }
+
+    /* Paragraphs */
+    p {
+      color: #000000;
+      font-weight: 300;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    /* OTP Display Box */
+    .otp-box {
+      display: inline-block;
+      padding: 14px 28px;
+      background: #061aab; /* Solid Brand Color */
+      color: #ffffff;
+      border-radius: 4px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+      letter-spacing: 2px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    /* Button (Optional) */
+    .button {
+      display: inline-block;
+      padding: 14px 28px;
+      background: #ffffff; /* Solid Brand Color */
+      color: #061aab;
+      text-decoration: none;
+      border-radius: 4px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      border: 1px solid #061aab;
+      transition: background 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .button:hover {
+      background: #f0f0f0;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #000000;
+      border-top: 1px solid #e0e0e0;
+      padding-top: 20px;
+    }
+
+    .footer p {
+      margin: 0;
+    }
+
+    .footer a {
+      color: #061aab;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+
+      .button {
+        width: 100%;
+        padding: 12px 0;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+
+      .otp-box {
+        font-size: 18px;
+        padding: 12px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Logo Section -->
+    <div class="logo">
+      <img src="https://res.cloudinary.com/dvbbsgj1u/image/upload/v1731090126/tesnhlpvlo6w9bdjepag.png" alt="Your Company Logo">
+    </div>
+  
+    <h2>OTP Verification</h2>
+    <p>Hello {{name}},</p>
+    <p>Your One-Time Password (OTP) for admin login is:</p>
+    <p class="otp-box">{{otp}}</p>
+    <p>This OTP is valid for 10 minutes.</p>
+    <p>If you did not attempt to login, please contact support immediately.</p>
+    
+    <!-- Optional: Button to Navigate to Login or Verification Page -->
+    <!--
+    <a href="{{verificationUrl}}" class="button">Verify OTP</a>
+    -->
+
+    <div class="footer">
+      <p>Thank you,<br>Your Company Team</p>
+      <p><a href="http://localhost:5173/contact">Contact Support</a></p>
+    </div>
+  </div>
+</body>
+</html>

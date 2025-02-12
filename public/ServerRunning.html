@@ -1,0 +1,65 @@
+<!-- public/ServerRunning.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Server is up and running</title>
+  <style>
+    /* General Styling */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    body, html {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #ffffff; /* Pure white background */
+      font-family: 'Poppins', sans-serif;
+    }
+    #container {
+      text-align: center;
+      color: #000000; /* Black text */
+    }
+    #status-image {
+      width: 500px; /* Larger image size */
+      height: auto;
+      margin-bottom: 20px;
+      animation: float 3s ease-in-out infinite; /* Up-down animation */
+    }
+    /* Smooth up-down animation */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    #status-text {
+      font-size: 28px;
+      font-weight: 600;
+      color: #000000; /* Black color for text */
+      margin-bottom: 20px;
+    }
+    /* Button Styling with Gradient */
+    #go-to-frontend {
+      display: inline-block;
+      padding: 12px 24px;
+      font-size: 18px;
+      font-weight: 600;
+      color: #ffffff;
+      background: linear-gradient(90deg, #061AA6, #000107); /* Gradient background */
+      border: none;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background 0.3s ease;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="container">
+    <img id="status-image" src="ServerRunning.jpg" alt="Server Running">
+    <div id="status-text">Your Server is up and running</div>
+    <a id="go-to-frontend" href="http://localhost:5173">Go To Frontend</a>
+  </div>
+</body>
+</html>

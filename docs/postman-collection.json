@@ -1,0 +1,60 @@
+{
+    "info": {
+      "name": "eCommerce API Collection",
+      "_postman_id": "unique-id",
+      "description": "Postman collection for testing the eCommerce backend API.",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Register User",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"name\": \"John Doe\",\n    \"email\": \"john@example.com\",\n    \"password\": \"StrongP@ssw0rd\",\n    \"role\": \"user\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:5000/api/auth/register",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["api", "auth", "register"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Login User",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"email\": \"john@example.com\",\n    \"password\": \"StrongP@ssw0rd\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:5000/api/auth/login",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["api", "auth", "login"]
+          }
+        },
+        "response": []
+      }
+
+    ]
+  }
+  

@@ -1,0 +1,43 @@
+{
+    "development": {
+      "port": 5000,
+      "mongoURI": "mongodb://localhost:27017/ecommerce",
+      "redisURL": "redis://localhost:6379",
+      "cloudinary": {
+        "cloud_name": "your-cloud-name",
+        "api_key": "your-api-key",
+        "api_secret": "your-api-secret"
+      },
+      "jwtSecret": "your-jwt-secret",
+      "sendgrid": {
+        "api_key": "your-sendgrid-api-key"
+      },
+      "aws": {
+        "accessKeyId": "your-aws-access-key-id",
+        "secretAccessKey": "your-aws-secret-access-key",
+        "region": "your-aws-region"
+      },
+      "emailService": "sendgrid" 
+    },
+    "production": {
+      "port": 8000,
+      "mongoURI": "your-production-mongodb-uri",
+      "redisURL": "your-production-redis-url",
+      "cloudinary": {
+        "cloud_name": "your-production-cloud-name",
+        "api_key": "your-production-api-key",
+        "api_secret": "your-production-api-secret"
+      },
+      "jwtSecret": "your-production-jwt-secret",
+      "sendgrid": {
+        "api_key": "your-production-sendgrid-api-key"
+      },
+      "aws": {
+        "accessKeyId": "your-production-aws-access-key-id",
+        "secretAccessKey": "your-production-aws-secret-access-key",
+        "region": "your-production-aws-region"
+      },
+      "emailService": "sendgrid" 
+    }
+  }
+  

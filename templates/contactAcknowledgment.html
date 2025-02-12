@@ -1,0 +1,123 @@
+<!-- templates/contactAcknowledgment.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thank You for Contacting Us</title>
+  <!-- Import Poppins Font from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset some default styles */
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Base styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f6f8;
+      padding: 20px;
+      color: #333333;
+    }
+
+    .container {
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 12px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      text-align: start;
+    }
+
+    .logo {
+      margin-bottom: 20px;
+      background: #061aab; 
+      text-align: center;
+      padding: 30px 20px;
+      border-radius: 8px;
+    }
+
+    .logo img {
+      width: 150px;
+      height: auto;
+    }
+
+    h2 {
+      color: #000000; /* Brand Color */
+      margin-bottom: 20px;
+      font-weight: 700;
+      font-size: 24px;
+    }
+
+    p {
+      color: #000000;
+      font-weight: 300;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    a{
+        color: #061aab;
+        text-decoration: none;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #000000;
+      border-top: 1px solid #e0e0e0;
+      padding-top: 20px;
+    }
+
+    .footer p {
+      margin: 0;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+
+      .logo {
+        padding: 20px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Logo Section -->
+    <div class="logo">
+      <img src="https://res.cloudinary.com/dvbbsgj1u/image/upload/v1731090126/tesnhlpvlo6w9bdjepag.png" alt="Your Company Logo">
+    </div>
+  
+    <h2>Thank You for Contacting Us!</h2>
+    <p>Hi {{name}},</p>
+    <p>We appreciate you reaching out to us. Your message has been received and our support team is reviewing it. We'll get back to you shortly with a response.</p>
+    
+    <p>If you have any additional information you'd like to provide, feel free to reply to this email or visit our <a href="{{supportUrl}}">support page</a>.</p>
+    
+    <p>Best regards,<br/>Your Company Team</p>
+    
+    <div class="footer">
+      <p>Best regards,<br/>Your Company Team</p>
+      <p><a href="{{supportUrl}}">Contact Support</a></p>
+    </div>
+  </div>
+  
+</body>
+</html>

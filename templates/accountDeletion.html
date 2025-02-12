@@ -1,0 +1,142 @@
+<!-- templates/accountDeletion.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Confirm Account Deletion</title>
+  <!-- Import Poppins Font from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset some default styles */
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .logo{
+        /* width: 100%; */
+        margin-bottom: 20px;
+        background: #061aab; 
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    /* Base styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f6f8;
+      padding: 20px;
+      color: #333333;
+    }
+
+    .container {
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 12px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      text-align: start;
+    }
+
+    .logo img {
+      width: 150px;
+      height: auto;
+    }
+
+    h2 {
+      color: #000000; /* Brand Color */
+      margin-bottom: 20px;
+      font-weight: 700;
+      font-size: 24px;
+    }
+
+    p {
+      color: #000000;
+      font-weight: 300;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+    a{
+        color: #061aab;
+      text-decoration: none;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 28px;
+      background: white; /* Solid Brand Color */
+      color: #061aab;
+      border: #061aab solid 1px;
+      text-decoration: none;
+      border-radius: 0px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      transition: background 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .button:hover {
+      background: white;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #000000;
+      border-top: 1px solid #e0e0e0;
+      padding-top: 20px;
+    }
+
+    .footer p {
+      margin: 0;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+
+      .button {
+        width: 100%;
+        padding: 12px 0;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Optional: Logo Section -->
+    <div class="logo">
+      <img src="https://res.cloudinary.com/dvbbsgj1u/image/upload/v1731090126/tesnhlpvlo6w9bdjepag.png" alt="Your Company Logo">
+    </div>
+  
+    <h2>Account Deletion Request</h2>
+    <p>Hello {{name}},</p>
+    <p>You have requested to delete your account. Please confirm this action by clicking the button below. This link will expire in 24 hours.</p>
+    <a href="{{deleteUrl}}" class="button">Confirm Account Deletion</a>
+    
+    <p>If you did not request this, please ignore this email or contact support immediately.</p>
+    
+    <div class="footer">
+      <p>Thank you, <br/>10X Formulas</p>
+      <p><a href="{{supportUrl}}">Contact Support</a></p>
+    </div>
+  </div>
+  
+</body>
+</html>
